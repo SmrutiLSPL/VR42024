@@ -2,7 +2,6 @@ package com.qa.VR4.pages;
 
 import com.qa.VR4.utils.JavaScriptUtil;
 import com.qa.VR4.utils.VRUtils;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

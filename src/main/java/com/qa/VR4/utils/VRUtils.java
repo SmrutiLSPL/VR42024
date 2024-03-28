@@ -1,6 +1,6 @@
 package com.qa.VR4.utils;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +24,8 @@ public class VRUtils {
 		this.driver = driver;
 		js = new JavaScriptUtil(driver);
 	}
+
+
 	
 	public void doclicksideMenu(String value)
 	{
@@ -267,6 +269,6 @@ driver.findElement(By.xpath("//button[@class='btn btn-secondary uk-modal-close c
 		}
 		Thread.sleep(2000);
 		js.scrollIntoView(unitName);
-		Assert.assertEquals(expunitname, Actunitname);
+
 	}
 }

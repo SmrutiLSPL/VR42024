@@ -2,6 +2,7 @@ package com.qa.VR4.base;
 import java.util.Properties;
 
 import com.qa.VR4.pages.*;
+import com.qa.VR4.utils.ExcelUtil;
 import com.qa.VR4.utils.JavaScriptUtil;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,8 @@ public class BaseTest {
     protected housekeepingWithReservationfunPage housePage;
     protected ReservationToInspectionPage resegrid;
     protected OwnerLoginPage ownerloginPage;
-
+    protected ArrivalDepartureReportPage arrivalDepart;
+    protected ExcelUtil xutils;
     protected JavaScriptUtil js;
     @BeforeTest
     public void setup() {
@@ -38,6 +40,8 @@ public class BaseTest {
         resegrid=new ReservationToInspectionPage(driver);
         housePage=new housekeepingWithReservationfunPage(driver);
         ownerloginPage =new OwnerLoginPage(driver);
+        arrivalDepart = new ArrivalDepartureReportPage(driver);
+        xutils =new ExcelUtil();
         wlogin=new withoutloginPage(driver);
         vrutil=new VRUtils(driver);
         js = new JavaScriptUtil(driver);
