@@ -12,13 +12,13 @@ public class InspectionDispatchpage {
     private WebDriver driver;
     private VRUtils vrutil;
     //1. Private By locators - Page locators
-    By continuebtn = By.xpath("//button[contains(@class,'continue')]");
-    By entersearchtxt = By.xpath("//input[@id='searchguest']");
-    By Clicksearch = By.xpath("//input[@id='searchguest']");
-    By clickReserve = By.xpath("//button[@class='btn btn-primary continue']");
-    By bookingValue = By.xpath("//tr[position()=4]//td[position()=2]//a");
+    private By continuebtn = By.xpath("//button[contains(@class,'continue')]");
+    private By entersearchtxt = By.xpath("//input[@id='searchguest']");
+    private By Clicksearch = By.xpath("//input[@id='searchguest']");
+    private By clickReserve = By.xpath("//button[@class='btn btn-primary continue']");
+    private By bookingValue = By.xpath("//tr[position()=4]//td[position()=2]//a");
 
-    By clickonfolio = By.xpath("//a[normalize-space()='Folio']");
+    private By clickonfolio = By.xpath("//a[normalize-space()='Folio']");
 
 
     //2. Public page Constructor

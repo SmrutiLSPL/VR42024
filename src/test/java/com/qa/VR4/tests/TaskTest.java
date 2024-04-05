@@ -28,8 +28,8 @@ public class TaskTest extends BaseTest {
     public void InpectionPageClickTest() throws InterruptedException {
         disPage.clickOnInspectionMenu();
         disPage.clickOnDispatchListOfMenu();
-        disPage.openDatePicker();
-        vrutil.selectDate("30","MARCH","2024");
+        disPage.openDatePicker("30","MARCH","2024");
+
         disPage.openInspectionUnitMarkCompleteTask("AQ111","Mark Completed");
     }
 

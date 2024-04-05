@@ -14,7 +14,7 @@ public class MenuPage {
     }
 
     //1. private By Locators - page locators
-    By reservationMenu = By.id("mainmenua9 ");
-    By reservationGrid=By.xpath("//li[@id='menu_item_84']//a[contains(@class,'menu-item')]");
+    private  By reservationMenu = By.id("mainmenua9 ");
+    private  By reservationGrid=By.xpath("//li[@id='menu_item_84']//a[contains(@class,'menu-item')]");
 
 }

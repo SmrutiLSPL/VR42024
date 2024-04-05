@@ -11,9 +11,9 @@ public class ReservationToInspectionPage {
     private VRUtils vrutil;
     private JavascriptExecutor executor;
     // 1. private By Locators - page locators
-    By reservationMenu=By.xpath("//a[@id='mainmenua9 ']");
-    By housekeepingMenu=By.xpath("//a[@id='mainmenua7 ']");
-    By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
+    private By reservationMenu=By.xpath("//a[@id='mainmenua9 ']");
+    private By housekeepingMenu=By.xpath("//a[@id='mainmenua7 ']");
+    private By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
     // 2. public page Constructor
     public ReservationToInspectionPage(WebDriver driver) {
         this.driver = driver;
@@ -27,6 +27,11 @@ public class ReservationToInspectionPage {
     public void clickOnListOfMenu()
     {
         vrutil.clickMaintenanceMenuWhenReady("Reservation Grid", 5);
+    }
+
+
+    public void createReservationForUnit(String unitName, int nights, String targetDate) throws InterruptedException {
+        vrutil.selectReservationGrid(unitName,nights,targetDate);
     }
 
 }

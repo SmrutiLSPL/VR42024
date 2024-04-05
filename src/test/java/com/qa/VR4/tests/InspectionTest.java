@@ -15,23 +15,23 @@ public class InspectionTest extends BaseTest {
     public void OpenDispatchMenuWithMarkCompleteTaskTest() throws InterruptedException {
        // disPage.clickOnInspectionMenu();
        //disPage.clickOnDispatchListOfMenu();
-       disPage.openDatePicker();
-       vrutil.selectDate("30", "MARCH", "2024");
+       disPage.openDatePicker("30", "MARCH", "2024");
+
        disPage.openInspectionUnitMarkCompleteTask("AQ111","Mark Completed");
    }
     @Test
     public void OpenDispatchMenuWithResetTest() throws InterruptedException {
         // disPage.clickOnInspectionMenu();
         //disPage.clickOnDispatchListOfMenu();
-        disPage.openDatePicker();
-        vrutil.selectDate("30", "MARCH", "2024");
+        disPage.openDatePicker("30", "MARCH", "2024");
+
         disPage.openInspectionUnitResetTask("AQ111","Reset", "30");
     }
 
     @Test
     public void OpenDispatchMenuWithCheckInTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("30", "MARCH", "2024");
+        disPage.openDatePicker("30", "MARCH", "2024");
+
         disPage.openInspectionUnitCheckInTask("AQ111","Check In","30");
     }
     @Test
@@ -47,35 +47,36 @@ public class InspectionTest extends BaseTest {
 
     @Test
     public void openInspectionUnitwithHoldTaskTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("30", "MARCH", "2024");
+        disPage.openDatePicker("30", "MARCH", "2024");
+
         disPage.openInspectionUnitHoldTask("AQ111","Hold");
     }
     @Test
     public void openInspectionUnitwithReleaseTaskTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("30", "MARCH", "2024");
+        disPage.openDatePicker("30", "MARCH", "2024");
+
         disPage.openInspectionUnitHoldWithReleaseTask("AQ111","Release");
     }
     @Test
     public void openInspectionUnitwithResetHoldReleaseTaskTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("19", "MARCH", "2024");
+        disPage.openDatePicker("19", "MARCH", "2024");
+
         disPage.openInspectionUnitHoldWithResetHoldReleaseTask("36RUE","Reset Hold/Release");
     }
 
     @Test
     public void selectnewUserForInspectionTaskTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("20", "MARCH", "2024");
+        disPage.openDatePicker("20", "MARCH", "2024");
+
+
         vrutil.selectUnitforDispatchPage("AMAZING");
         disPage.selectNewInspectionUser("SmrutiQA");
 
     }
     @Test
     public void selectNewDateForInspectionTaskAndValidateWithNewDateTest() throws InterruptedException {
-        disPage.openDatePicker();
-        vrutil.selectDate("20", "MARCH", "2024");
+        disPage.openDatePicker("20", "MARCH", "2024");
+
         vrutil.selectUnitforDispatchPage("AMAZING");
         disPage.selectNewDateForInspectionTaskAndValidateWithNewDate();
 

@@ -4,13 +4,16 @@ import java.util.Properties;
 import com.qa.VR4.pages.*;
 import com.qa.VR4.utils.ExcelUtil;
 import com.qa.VR4.utils.JavaScriptUtil;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+
 import com.qa.VR4.factory.DriverFactory;
 import com.qa.VR4.utils.SessionManager;
 import com.qa.VR4.utils.VRUtils;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
 public class BaseTest {
     public static WebDriver driver;
 
@@ -28,8 +31,11 @@ public class BaseTest {
     protected ReservationToInspectionPage resegrid;
     protected OwnerLoginPage ownerloginPage;
     protected ArrivalDepartureReportPage arrivalDepart;
+
+    protected CreateUserPage openuserPage;
     protected ExcelUtil xutils;
     protected JavaScriptUtil js;
+
     @BeforeTest
     public void setup() {
         df=new DriverFactory();
@@ -41,14 +47,16 @@ public class BaseTest {
         housePage=new housekeepingWithReservationfunPage(driver);
         ownerloginPage =new OwnerLoginPage(driver);
         arrivalDepart = new ArrivalDepartureReportPage(driver);
+        openuserPage=new CreateUserPage(driver);
         xutils =new ExcelUtil();
         wlogin=new withoutloginPage(driver);
         vrutil=new VRUtils(driver);
         js = new JavaScriptUtil(driver);
     }
     @AfterTest
-    public void tearDown() {
-        //driver.quit();
+    public void tearDown()  {
+       //driver.quit();
+
     }
 
 }

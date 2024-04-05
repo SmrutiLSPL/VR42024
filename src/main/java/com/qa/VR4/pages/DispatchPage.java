@@ -14,15 +14,16 @@ import java.time.Duration;
 import java.util.List;
 
 public class DispatchPage {
-    private static WebDriver driver;
+    private  WebDriver driver;
     private VRUtils vrutil;
     private JavaScriptUtil js;
+    private By pageName =By.xpath("//h4[contains(text(),'Dispatch')]");
+    private By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
+    private By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
+    private By clickInspectionCalendarIcon=By.xpath("//input[@class='form-control dateineditmodal hasDatepicker']");
+    private By selectuserclick = By.xpath("//a[@class='chosen-single']/parent::div");
+    private By saveClick = By.xpath("//a[text()='Save']");
 
-    By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
-    By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
-    By clickInspectionCalendarIcon=By.xpath("//input[@class='form-control dateineditmodal hasDatepicker']");
-    By selectuserclick = By.xpath("//a[@class='chosen-single']/parent::div");
-    By saveClick = By.xpath("//a[text()='Save']");
 
     public DispatchPage(WebDriver driver) {
         this.driver = driver;
@@ -39,9 +40,10 @@ public class DispatchPage {
         vrutil.clickMaintenanceMenuWhenReady("Dispatch", 5);
     }
 
-    public void openDatePicker() {
+    public void openDatePicker(String date ,String month,String year ) {
         vrutil.doClick(clickCalendarIcon);
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("ui-datepicker-calendar")));
+        vrutil.selectDate(date, month, year);
 
     }
 
@@ -79,6 +81,8 @@ public class DispatchPage {
 
 
         }
+
+
         String actMsg = (driver.findElement(By.xpath("//div[contains(text(),'" + inspectionUnitName + "')]"))).getText();
         System.out.println(actMsg);
         String ExpectedTitle = inspectionUnitName + " To Completed.";

@@ -26,10 +26,10 @@ public class housekeepingWithReservationfunPage {
         js = new JavaScriptUtil(driver);
     }
 
-    By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
-    By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
-    By selectuserclick = By.xpath("//a[@class='chosen-single']/parent::div");
-    By saveClick = By.xpath("//a[text()='Save']");
+    private By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
+    private By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
+    private By selectuserclick = By.xpath("//a[@class='chosen-single']/parent::div");
+    private By saveClick = By.xpath("//a[text()='Save']");
 
     public void clickOnHousekeepingMenu() throws InterruptedException {
 

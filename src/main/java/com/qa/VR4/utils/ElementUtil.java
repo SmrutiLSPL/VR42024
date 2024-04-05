@@ -37,6 +37,9 @@ public class ElementUtil {
 
         getElement(locator).sendKeys(value);
     }
+    public void doClear(By locator) {
+        getElement(locator).clear();
+    }
 
     public void doClick(By locator) {
         getElement(locator).click();
@@ -598,5 +601,6 @@ public class ElementUtil {
         String flag = wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'")).toString();
         return Boolean.parseBoolean(flag);
     }
+
 
 }

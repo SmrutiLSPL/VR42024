@@ -28,13 +28,12 @@ public class ArrivalDepartureReportPage {
     ArrayList<String> hkData = new ArrayList<String>();
 
 
-
-    By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
-    By openStartDate = By.xpath("//input[@name='forhkrepstartdate']");
-    By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
-    By ClickarrivalCalendarIcon=By.xpath("//a[@class='datechanger btn btn-sm btn-default ']");
-    By openendDate = By.xpath("//input[@name='forhkrependdate']");
-    By generatebtn = By.xpath("//input[@name='which']");
+    private By housekeepingMenu = By.xpath("//a[@id='mainmenua7 ']");
+    private By openStartDate = By.xpath("//input[@name='forhkrepstartdate']");
+    private By clickCalendarIcon = By.xpath("//a[@class='datechanger btn btn-default ']");
+    private By ClickarrivalCalendarIcon = By.xpath("//a[@class='datechanger btn btn-sm btn-default ']");
+    private By openendDate = By.xpath("//input[@name='forhkrependdate']");
+    private By generatebtn = By.xpath("//input[@name='which']");
 
     public ArrivalDepartureReportPage(WebDriver driver) {
         this.driver = driver;
@@ -86,8 +85,6 @@ public class ArrivalDepartureReportPage {
         List<WebElement> Title = driver.findElements(By.xpath("//div[@id='thisneedstobeprinted']//h5[@class='grayback mt-3 mb-3 gray-sub-head']"));
 
 
-
-
         for (WebElement adtitle : Title) {
             String arrival = adtitle.getText();
 
@@ -115,7 +112,7 @@ public class ArrivalDepartureReportPage {
 
     }
 
-//    public void openmainMenu()
+    //    public void openmainMenu()
 //    {
 //        vrutil.clickMaintenanceMenuWhenReady("Dispatch", 5);
 //    }
@@ -160,6 +157,7 @@ public class ArrivalDepartureReportPage {
         }
 
     }
+
     public void comparedatawithDispatch() throws IOException {
         {
             xutils.setCellData("sheet1", 0, 5, "Departure => Housekeeping");
@@ -180,6 +178,7 @@ public class ArrivalDepartureReportPage {
             }
         }
     }
+
     public void compareDataWithArrivalPage() throws IOException {
         // Navigate on arrival menu and select Assignment Date
         int col3 = 4;
@@ -216,17 +215,15 @@ public class ArrivalDepartureReportPage {
         xutils.setCellData("sheet1", 0, 8, "Arrival=>Inspection=>Arrival&Depature");
         for (int i = 0; i < adData.size(); i++) {
             String singleAD = adData.get(i);
-            if(inspData.contains(singleAD) && arrivalData.contains(singleAD)) {
+            if (inspData.contains(singleAD) && arrivalData.contains(singleAD)) {
                 xutils.setCellData("sheet1", i + 1, 8, "Value Match");
             } else {
                 xutils.setCellData("sheet1", i + 1, 8, "Value Does not Match");
             }
+        }
+
     }
-
-}}
-
-
-
+}
 
 
 //
@@ -275,7 +272,7 @@ public class ArrivalDepartureReportPage {
 //                xutils.setCellData("sheet1", i + 1, 8, "Value Does not Match");
 //            }
 
-        //=============================
+//=============================
 
 //			for (int j = 0; j < inspData.size(); j++) {
 //
@@ -293,14 +290,14 @@ public class ArrivalDepartureReportPage {
 //			}
 
 
-        // xutils.setCellData("sheet1", 0, 7, "A => AD");
+// xutils.setCellData("sheet1", 0, 7, "A => AD");
 //		int maxRow = Math.max(aData.size(), adData.size());
 //		for (int i = 0; i < maxRow; i++) {
 //			xutils.setCellFormula("sheet1", i + 1, 7,
 //					"IF(ISERROR(VLOOKUP(E" + (i + 2) + ",$A$2:$A$" + (maxRow + 1) + ",1,Value Does not Match)),Value Does not Match,Value Match)");
 //		}
 
-        // xutils.workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
+// xutils.workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
 
 
 
