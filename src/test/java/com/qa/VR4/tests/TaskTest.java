@@ -2,6 +2,7 @@ package com.qa.VR4.tests;
 
 import com.qa.VR4.base.BaseTest;
 
+import com.qa.VR4.constants.AppConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,8 +27,8 @@ public class TaskTest extends BaseTest {
     }
     @Test(priority = 2)
     public void InpectionPageClickTest() throws InterruptedException {
-        disPage.clickOnInspectionMenu();
-        disPage.clickOnDispatchListOfMenu();
+
+        disPage.clickOnInspectionMenu("Dispatch", AppConstants.SHORT_TIME_OUT);
         disPage.openDatePicker();
         vrutil.selectDate("30","MARCH","2024");
         disPage.openInspectionUnitMarkCompleteTask("AQ111","Mark Completed");
