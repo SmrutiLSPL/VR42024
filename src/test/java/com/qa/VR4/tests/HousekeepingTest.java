@@ -14,7 +14,7 @@ public class HousekeepingTest extends BaseTest {
     public void HousekeepingtaskwithReservationGridPageTest() throws InterruptedException {
         resegrid.clickmainmenu();
         resegrid.clickOnListOfMenu();
-        vrutil.selectReservationGrid("AQ1508",3, "19");
+        vrutil.selectReservationGrid("SHORE146",3, "16");
     }
     @Test(priority = 2)
     public void validatetheHousekeepingtaskwithCheckoutDateTest() throws InterruptedException {

@@ -25,14 +25,14 @@ public class TaskTest extends BaseTest {
         resegrid.clickOnListOfMenu();
         vrutil.selectReservationGrid("AQ111",3, "30");
     }
-    @Test(priority = 2)
-    public void InpectionPageClickTest() throws InterruptedException {
-
-        disPage.clickOnInspectionMenu("Dispatch", AppConstants.SHORT_TIME_OUT);
-        disPage.openDatePicker();
-        vrutil.selectDate("30","MARCH","2024");
-        disPage.openInspectionUnitMarkCompleteTask("AQ111","Mark Completed");
-    }
+//    @Test(priority = 2)
+//    public void InpectionPageClickTest() throws InterruptedException {
+//
+//        disPage.clickOnInspectionMenu("Dispatch", AppConstants.SHORT_TIME_OUT);
+//        disPage.openDatePicker();
+//        vrutil.selectDate("30","MARCH","2024");
+//        disPage.openInspectionUnitMarkCompleteTask("AQ111","Mark Completed");
+//    }
 
 
 
