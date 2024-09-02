@@ -1,4 +1,4 @@
-package com.qa.VR4.tests;
+package com.qa.VR4.tests.HousekeepingMenu;
 
 import com.qa.VR4.base.BaseTest;
 import org.testng.annotations.BeforeTest;

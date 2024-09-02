@@ -1,4 +1,4 @@
-package com.qa.VR4.pages;
+package com.qa.VR4.pages.HousekeepingMenu;
 
 import com.qa.VR4.utils.JavaScriptUtil;
 import com.qa.VR4.utils.VRUtils;

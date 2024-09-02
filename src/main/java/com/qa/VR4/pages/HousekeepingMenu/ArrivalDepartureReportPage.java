@@ -1,4 +1,4 @@
-package com.qa.VR4.pages;
+package com.qa.VR4.pages.HousekeepingMenu;
 
 import com.qa.VR4.utils.ExcelUtil;
 import com.qa.VR4.utils.VRUtils;

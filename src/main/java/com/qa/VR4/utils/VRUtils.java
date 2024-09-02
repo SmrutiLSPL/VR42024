@@ -297,6 +297,17 @@ public class VRUtils {
         }
         return selectedDRp;
     }
+    /*
+    Code for if user select other mobile view and want to select disptach view
+     */
+
+    public void selectView()
+    {
+
+    }
+
+
+
 
     // Wait concept
 

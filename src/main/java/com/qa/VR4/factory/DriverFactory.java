@@ -33,6 +33,7 @@ public class DriverFactory {
      *
      * @return it returns driver
      */
+
     public WebDriver initDriver(Properties prop) {
         String browserName = prop.getProperty("browser");
 

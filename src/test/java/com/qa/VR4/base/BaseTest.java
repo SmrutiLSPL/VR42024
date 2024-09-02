@@ -5,11 +5,16 @@ import com.qa.VR4.pages.*;
 import com.qa.VR4.pages.GL.OfficesMenuPage;
 import com.qa.VR4.pages.GL.globalConfigPage;
 import com.qa.VR4.pages.GL.locationMenuPage;
+import com.qa.VR4.pages.HousekeepingMenu.ArrivalDepartureReportPage;
+import com.qa.VR4.pages.HousekeepingMenu.DispatchPage;
+import com.qa.VR4.pages.HousekeepingMenu.ReservationToInspectionPage;
+import com.qa.VR4.pages.HousekeepingMenu.housekeepingWithReservationfunPage;
 import com.qa.VR4.pages.property.AddPropertyPage;
 import com.qa.VR4.pages.property.EditPropertyPage;
 import com.qa.VR4.utils.*;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import com.qa.VR4.factory.DriverFactory;
 
@@ -31,13 +36,13 @@ public class BaseTest {
     protected OwnerLoginPage ownerloginPage;
     protected ArrivalDepartureReportPage arrivalDepart;
     protected AddPropertyPage addProperty;
-
     protected EditPropertyPage editProperty;
     protected globalConfigPage glConfig;
     protected locationMenuPage location;
     protected OfficesMenuPage office;
 
     protected ExcelUtil xutils;
+    protected String testCaseId;
 
     @BeforeTest
     public void setup() {
@@ -60,9 +65,21 @@ public class BaseTest {
         vrutil=new VRUtils(driver);
 
     }
-    @AfterTest
+    @BeforeTest
     public void tearDown() {
         //driver.quit();
     }
+    @AfterMethod
+    public void addResultsToTestRail(ITestResult result)
+    {
+        if(result.getStatus()==ITestResult.SUCCESS)
+        {
+            ClickUpTaskUpdater.updateTaskStatus(testCaseId,ClickUpTaskUpdater.TEST_CASE_PASS_STATUS,"");
+        } else if (result.getStatus()==ITestResult.FAILURE) {
+            ClickUpTaskUpdater.updateTaskStatus(testCaseId,ClickUpTaskUpdater.TEST_CASE_FAIL_STATUS,"Test got fail"
+                    + result.getName()+": FAILED");
+        }
+    }
+
 
 }

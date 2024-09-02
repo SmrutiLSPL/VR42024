@@ -8,6 +8,8 @@ public class PropertyMainwithOpenUnitTest extends BaseTest {
 
 
     @BeforeTest
+
+
     public void login() {
         wlogin.defaultlogin(prop.getProperty("username"), prop.getProperty("password"), prop.getProperty("selectView"));
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Regression Suite" thread-count="5"
+       parallel="tests" verbose="4">
+
+    <test name="Login Page Test">
+        <parameter name="browser" value="chrome" />
+        <parameter name="browserversion" value="113" />
+        <parameter name="testname" value="LoginPageTest" />
+
+
+        <classes>
+            <class name="com.qa.VR4.tests.LoginPageTest" />
+        </classes>
+    </test>
+
+</suite>
